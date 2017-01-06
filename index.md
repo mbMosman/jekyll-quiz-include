@@ -26,4 +26,6 @@ It is easiest to use variables to hold the parameter values, then pass the varia
 {% assign q1-correct = 0 %}
 {% include mc-quiz.html text=q1-text choices=q1-choices answer=q1-correct feedback=q1_feedbacks %}
 
-Some CSS is needed to pretty this up... but the solution checking and feedback showing is handled through inline JavaScript.
+
+
+Clearly some CSS is needed to pretty this up... but the solution checking and feedback showing is handled through inline JavaScript.
