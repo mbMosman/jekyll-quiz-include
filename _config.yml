@@ -1,0 +1,14 @@
+title: Simple Quiz Include
+
+baseurl: "/jekyll-quiz-include" # the subpath of your site, e.g. /blog
+url: "https://mbmosman.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  mbmosman
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
