@@ -1,6 +1,8 @@
 ---
 layout: page
 ---
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 The quiz questions are built using an include with parameters.  The template expects 3 parameters:
 
@@ -21,14 +23,12 @@ It is easiest to use variables to hold the parameter values, then pass the varia
 {% endraw %}
 {% endhighlight %}
 
-<hr>
-<br>
+
+This requires Bootstrap for styling.
+
 {% assign q1-text = "This is an awesome template!" %}
 {% assign q1-choices = "True, False" | split: ', ' %}
 {% assign q1_feedbacks = "Correct!  This is an awesome template., How can you say that?!" | split: ', ' %}
 {% assign q1-correct = 0 %}
 {% include mc-quiz.html text=q1-text choices=q1-choices answer=q1-correct feedback=q1_feedbacks %}
-<br>
-<hr>
-<br><br>
-Clearly some CSS is needed to pretty this up... but the solution checking and feedback showing is handled through inline JavaScript.
+
