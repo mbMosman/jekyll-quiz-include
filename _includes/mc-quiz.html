@@ -3,7 +3,7 @@
     {% if include.header %} {{ include.header }} {% else %}Question{% endif %}
   </div>
   <div class="panel-body">
-    <div class="qtext">{{ include.text }}</div>
+    <div class="qtext">{{ include.text | markdownify}}</div>
   </div>
   <table class="choices table" style="border-bottom:1px solid #ddd">
     <tbody>
@@ -12,8 +12,8 @@
         <td class="choice-radio col-xs-1">
           <input type="radio" name="radio-choices">
         </td>
-        <td class="choice-text">{{ choice }}</td>
-        <td class="choice-feedback"><span class="hidden text-muted">{{ include.feedback[forloop.index0] }}</span></td>
+        <td class="choice-text">{{ choice | markdownify}}</td>
+        <td class="choice-feedback"><span class="hidden text-muted">{{ include.feedback[forloop.index0] | markdownify }}</span></td>
       </tr>
       {% endfor %}
     </tbody>
@@ -41,8 +41,8 @@
                             feedbackMsg.classList.remove('hidden');
                           } else {
                             panel.classList.add('panel-danger');
-                          } 
-                        }   
+                          }
+                        }
                       }
                       btn.classList.add('disabled');
                       //btn.setAttribute('disabled', true);
@@ -61,7 +61,7 @@
                       panel.classList.add('panel-primary');
                       for (i=0; i<choices.length; i++){
                         radio = choices[i].firstElementChild.firstElementChild;
-                        radio.checked = false; 
+                        radio.checked = false;
                         radio.removeAttribute('disabled');
                         msg = choices[i].lastElementChild.firstElementChild;
                         msg.classList.add('hidden');
